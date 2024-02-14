@@ -62,6 +62,7 @@ const BookerComponent = ({
   duration,
   hashedLink,
   isInstantMeeting = false,
+  orgBannerUrl,
 }: BookerProps) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -411,7 +412,13 @@ const BookerComponent = ({
               <BookerSection
                 area="meta"
                 className="max-w-screen flex w-full flex-col md:w-[var(--booker-meta-width)]">
-                <img className="-mb-9 rounded-tl-md" alt="org banner" src={orgBanner} />
+                {orgBannerUrl && (
+                  <img
+                    className="-mb-9 max-h-56 rounded-tl-md md:max-h-36 "
+                    alt="org banner"
+                    src={orgBannerUrl}
+                  />
+                )}
 
                 <EventMeta event={event.data} isPending={event.isPending} />
                 {layout !== BookerLayouts.MONTH_VIEW &&
