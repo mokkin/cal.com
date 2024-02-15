@@ -307,8 +307,6 @@ const BookerComponent = ({
     return null;
   }
 
-  const orgBanner = "https://pbs.twimg.com/profile_banners/1063089191565905920/1685635865/1500x500";
-
   return (
     <>
       {event.data ? <BookingPageTagManager eventType={event.data} /> : null}
